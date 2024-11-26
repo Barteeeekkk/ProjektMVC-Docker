@@ -1,0 +1,34 @@
+
+<%- include('partials/head.ejs')%>
+<body>
+    
+    <%- include('partials/navigation.ejs')%>
+
+    <div class="main">
+
+
+      <h1 >Expenditure list</h1>
+      <div class="main4">
+          
+              <% if (forms && forms.length > 0) { %>
+                  <% forms.forEach(form => { %>
+                    <div class="container">
+                      <strong>Nazwa:</strong> <%= form.expensename %>,<br>
+                      <strong>Kategoria:</strong> <%= form.category %>,<br>
+                      <strong>Kwota:</strong> <%= form.sum %>,<br>
+                      <strong>Data:</strong> <%= form.date %><br>
+          
+                      <button id="edit"><a href="/forms/<%= form.id %>">Edit Data</a></button><br>
+                      
+                      <form method="POST" action="/<%=form.id%>?_method=DELETE">
+                          <button type="submit">Delete Data</button>
+                    </div>
+              
+                  <% }); %>
+                <% } else { %>
+                  <strong>Brak danych</strong>
+                <% } %>
+      </div>
+    </div>
+</body>
+</html>

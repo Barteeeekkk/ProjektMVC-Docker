@@ -1,0 +1,33 @@
+<%- include('partials/head.ejs')%>
+<body>
+    <%- include('partials/navigation.ejs')%>
+
+    <div class ="main">
+    <h1>Expense Form</h1>
+    <div class ="main3">
+    <form action="/forms" method="post">
+        <label for="expenseName">Expense Name:</label><br>
+        <input type="text" id="expenseName" name="expenseName" ><br>
+        
+        <label for="category">Category:</label><br> 
+        <select id="category"  name="category">
+            <option value="Food">Food</option>
+            <option value="Bills">Bills</option>
+            <option value="Health">Health</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Relaxation">Relaxation</option>
+            <option value="Others">Others</option>
+        </select><br>
+        
+        <label for="sum">Sum[$]:</label><br>
+        <input type="number" id="sum" name="sum" ><br>
+        
+        <label for="date">Date:</label><br>
+        <input type="date" id="date"  name="date" ><br><br>
+        
+        <button type ="submit">Submit</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>
