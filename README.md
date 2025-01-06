@@ -1,4 +1,4 @@
-# ProjektMVC
+# ProjektMVC - DOCKER
 System monitorowania wydatków
 
 #spis treści:
