@@ -9,9 +9,10 @@ Funkcjonalnosci:
   1.3 Metoda PUT. 
   1.4 Metoda DELETE. 
   1.5 Zapis danych.
+  1.6 Docker
 
 Instrukcja obsługi 
-	2.1 Pakiety 
+	2.1 Pakiety NodeJs
 	2.2 Jak Uruchomić
 
 Funkcjonalności:
@@ -20,10 +21,11 @@ Funkcjonalności:
 	1.3 Metoda PUT - żądanie HTTP do akutalizacji danych w danym zasobie informacji, użytkownik może zawsze edytkować każdą ceche swojego wydatku. 
 	1.4 Metoda DELETE - żądanie HttP do usunięcia danych z zasobu, użytkownik może usunąc dany wydatek z bazy danych. 
 	1.5 Zapis danych - aplikacja zapisuje dane w bazie danych w Postgresie.
+	1.6 Docker - aplikacja operuje na dwoch kontenerach, w jednym mamy front i backend, w drugim mamy baze danych Postgres.
 
 2.Instrukcja obsługi:
 
-2.1 Pakiety: 
+2.1 Pakiety NodeJs: 
 - Express.js
 - EJS 
 - Method-override
