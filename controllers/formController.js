@@ -20,7 +20,7 @@ const formListRender = async (request,response) =>{
        });
     }
     catch(err){
-        console.error('Błąd podczas renderowania listy:', err);
+        console.error('Rendering list error:', err);
         const forms = []
         response.render("formList", {
             forms : forms,
@@ -37,7 +37,6 @@ const addNewForm = (request,response) =>{
 
 const formEditRender = async (request,response) =>{
     try{
-        console.log("działam render");
         const id = Number(request.params.id);
 
         const form = await Form.getExpediture(id);
@@ -50,14 +49,13 @@ const formEditRender = async (request,response) =>{
        });
     }
     catch(err){
-        console.error('Błąd podczas pobierania wydatku', err);
+        console.error('Form error:', err);
         response.redirect('/forms')
     }
 }
 
 const editForm = async (request,response) =>{
     try{
-        console.log("działam edycja")
         const id = request.params.id;
         const parsedId = parseInt(id);
         console.log(parsedId);
@@ -71,7 +69,7 @@ const editForm = async (request,response) =>{
         
     }
     catch(err){
-        console.error('Błąd podczas edycji wydatku', err);
+        console.error('Form edidtion error:', err);
         response.redirect('/forms')
     }
     
@@ -79,7 +77,6 @@ const editForm = async (request,response) =>{
 
 const deleteFrom = async (request,response) =>{
     try{
-        console.log("dziala usun");
         const id = request.params.id;
         const parsedId = parseInt(id);
 
@@ -89,7 +86,7 @@ const deleteFrom = async (request,response) =>{
         
     }
     catch(err){
-        console.error('Błąd podczas usuwania wydatku', err);
+        console.error('Form delete error:', err);
         response.redirect('/forms')
     }
     
