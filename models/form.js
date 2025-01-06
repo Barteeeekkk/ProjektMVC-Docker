@@ -11,7 +11,7 @@ const client = new Client({
 const createTableIfNotExists = async () => {
     try {
         await client.connect();
-        console.log("Połączono z bazą danych!");
+        console.log("Successful connection with DataBase");
 
         const query = `
             CREATE TABLE IF NOT EXISTS expeditures (
@@ -23,9 +23,9 @@ const createTableIfNotExists = async () => {
             );
         `;
         await client.query(query);
-        console.log("Tabela została utworzona.");
+        console.log("Table successful created");
     } catch (err) {
-        console.error("Błąd podczas tworzenia tabeli:", err);
+        console.error("Failure - table created error:", err);
     }
 };
 createTableIfNotExists();
@@ -36,10 +36,10 @@ function AddExpediture(expenseName, category, sum, date) {
 
     return client.query(query, values)
         .then(results => {
-            console.log('Dane dodane pomyślnie!', results);
+            console.log('Data added successful.', results);
         })
         .catch(err => {
-            console.error('Błąd podczas wstawiania danych:', err);
+            console.error('Failure - data added error: ', err);
         });
 }
 
@@ -49,7 +49,7 @@ function getAllExpenditures() {
     return client.query(query)
         .then(results => results.rows)
         .catch(err => {
-            console.error('Błąd podczas pobierania danych:', err);
+            console.error('Failure - data error: ', err);
             throw err;
         });
 }
@@ -60,7 +60,7 @@ function getExpediture(id){
     return client.query(query,[id])
         .then(results => results.rows)
         .catch(err => {
-            console.error('Błąd podczas pobierania danych:', err);
+            console.error('Failure - error with form: ', err);
             throw err;
         });
 }
@@ -70,7 +70,7 @@ function getExpeditureByCategory(category){
     return client.query(query,category)
         .then(results => results.rows)
         .catch(err => {
-            console.error('Błąd podczas pobierania danych:', err);
+            console.error(`Failure - data category($category) error: `, err);
             throw err;
         });
 }
@@ -80,10 +80,10 @@ function deleteExpediture(id){
 
     return client.query(query,[id])
     .then(results => {
-        console.log('Pomyślnie usunięty', results);
+        console.log('Successful data deleted', results);
     })
     .catch(err => {
-        console.error('Błąd podczas usuwania ', err);
+        console.error('Failure - deleted data error: ', err);
     });
 }
 
@@ -95,10 +95,10 @@ function editExpediture(expenseName, category, sum, date, id){
     
     return client.query(query,values)
     .then(results => {
-        console.log('Pomyślnie zaaktualizowano', results);
+        console.log('Successful data update', results);
     })
     .catch(err => {
-        console.error('Błąd podczas aktualizacji ', err);
+        console.error('Failure - data update error: ', err);
     });
 }
 
