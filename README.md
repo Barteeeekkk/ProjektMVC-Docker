@@ -30,4 +30,4 @@ Funkcjonalności:
 - Nodemon
 
 2.2 Jak uruchomić:
-	W celu uruchomienia aplikacji należy wejsc w plik aplikacji i w terminalu wpisać "docker compose up", nastepnie aby przejść do strony kliknij na link wyświetlony w konsoli(domyślnie: "http://localhost3000").
+	W celu uruchomienia aplikacji należy wejsc w plik aplikacji i w terminalu wpisać "docker compose up", nastepnie aby przejść na localhost:3000.
